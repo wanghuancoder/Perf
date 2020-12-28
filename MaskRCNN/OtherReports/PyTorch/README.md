@@ -39,10 +39,10 @@
 
 ### 2.Docker 镜像
 
-我们使用 NGC TensorFlow2 的代码仓库提供的Dockerfile制作镜像：
+我们使用 NGC Pytorch 的代码仓库提供的脚本制作镜像：
 
 - Docker: nvcr.io/nvidia/pytorch:20.06-py3
-- PyTorch：2.2.0
+- PyTorch：1.6.0a0+9907a3e
 - 模型代码：[NVIDIA/DeepLearningExamples/Pytorch](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Segmentation/MaskRCNN)
 - CUDA：11
 - cuDNN：8.0.1
