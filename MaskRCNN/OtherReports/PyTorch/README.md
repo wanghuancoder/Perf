@@ -84,12 +84,15 @@ TODO Distribute
 
 ### 1.单机（单卡、8卡）测试
 
-对于1卡、8卡性能测试，本报告严格按NGC公开的测试报告进行复现，对其提供的代码未做改动，并严格按照NGC测试使用的参数配置测试。其公开的测试报告请见：[《Mask R-CNN For PyTorch》](https://github.com/NVIDIA/DeepLearningExamples/tree/master/TensorFlow2/Segmentation/MaskRCNN)
+对于1卡、8卡性能测试，本报告严格按NGC公开的测试报告进行复现。其公开的测试报告请见：[《Mask R-CNN For PyTorch》](https://github.com/NVIDIA/DeepLearningExamples/tree/master/TensorFlow2/Segmentation/MaskRCNN)。我们参照NGC公开的train_benchmark.sh编写了测试脚本，其中有两处不同：
+1. 修改了`configs/e2e_mask_rcnn_R_50_FPN_1x.yaml`配置，将`DATASETS`的配置修改为：`TRAIN: ("coco_2014_train", "coco_2014_val")  TEST: ("coco_2014",)`。因为我们的数据集中并没有minusminival数据。
+2. 将脚本中的`SOLVER.BASE_LR 0.04`改为`SOLVER.BASE_LR 0.01`。因为，测试时我们发现，float16下，如果lr为0.04会出现loss为NAN。
 
 - 下载我们编写的测试脚本，并执行该脚本
 
    ```bash
    wget https://raw.githubusercontent.com/PaddlePaddle/Perf/master/MaskRCNN/OtherReports/PyTorch/scripts/pytorch_test_all.sh
+   wget https://raw.githubusercontent.com/PaddlePaddle/Perf/master/MaskRCNN/OtherReports/PyTorch/scripts/pytorch_test_base.sh
    bash pytorch_test_all.sh
    ```
 
@@ -103,7 +106,7 @@ TODO Distribute
    ./pytorch_gpu8_fp32_bs2.txt
    ./pytorch_gpu8_fp32_bs4.txt
    ./pytorch_gpu8_amp_bs2.txt
-   ./tf_gpu8_amp_bs4.txt
+   ./pytorch_gpu8_amp_bs4.txt
    ```
 
 ### 2.多机（32卡）测试
