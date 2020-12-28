@@ -39,7 +39,7 @@
 
 ### 2.Docker 镜像
 
-我们使用 NGC TensorFlow2 的代码仓库提供的Dockerfile制作镜像：
+我们使用 NGC TensorFlow2 的代码仓库提供的脚本制作镜像：
 
 - Docker: nvcr.io/nvidia/tensorflow:20.06-tf2-py3
 - TensorFlow：2.2.0
