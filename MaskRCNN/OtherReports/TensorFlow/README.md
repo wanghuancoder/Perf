@@ -91,7 +91,7 @@ TODO Distribute
 
 ### 1.单机（单卡、8卡）测试
 
-对于1卡、8卡性能测试，本报告严格按NGC公开的测试报告进行复现，对其提供的代码未做改动，并严格按照NGC测试使用的参数配置测试。其公开的测试报告请见：[《Mask R-CNN For Tensorflow》](https://github.com/NVIDIA/DeepLearningExamples/tree/master/TensorFlow2/Segmentation/MaskRCNN#quick-start-guide)
+对于1卡、8卡性能测试，本报告严格按NGC公开的测试报告进行复现，对其提供的代码未做改动，并严格按照NGC测试使用的参数配置测试。其公开的测试报告请见：[《Mask R-CNN For Tensorflow》](https://github.com/NVIDIA/DeepLearningExamples/tree/master/TensorFlow2/Segmentation/MaskRCNN)
 
 - 下载我们编写的测试脚本，并执行该脚本
 
