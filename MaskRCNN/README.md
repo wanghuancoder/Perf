@@ -75,7 +75,7 @@ Mask R-CNN 作为图像分割领域极具代表性的模型。在测试性能时
 
 - **镜像版本**: `hub.baidubce.com/paddlepaddle/paddle-benchmark:cuda10.1-cudnn7-runtime-ubuntu16.04`
 - **Paddle 版本**: `develop+613c46bc0745c8069c55686aef4adc775f9e27d1`
-- **模型代码**：[PaddleNLP](https://github.com/PaddlePaddle/models/tree/develop/PaddleNLP)
+- **模型代码**：[PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection)
 - **CUDA 版本**: `10.1`
 - **cuDnn 版本:** `7.6.5`
 
@@ -95,10 +95,10 @@ Mask R-CNN 作为图像分割领域极具代表性的模型。在测试性能时
 
 - 拉取PaddleClas
   ```bash
-  git clone https://github.com/PaddlePaddle/PaddleClas.git
-  cd PaddleClas
+  git clone https://github.com/PaddlePaddle/PaddleDetection.git
+  cd PaddleDetection
   # 本次测试是在如下版本下完成的：
-  git checkout b0904fd250715b3c040c88881395bad06eea9be6
+  git checkout xxxxx
   ```
 
 - 多机网络部署
