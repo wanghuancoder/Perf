@@ -1,9 +1,9 @@
 <!-- omit in toc -->
-# Paddle Bert Base 性能测试
+# Paddle Mask R-CNN 性能测试
 
-此处给出了基于 Paddle 框架实现的 Bert Base Pre-Training 任务的训练性能详细测试报告，包括执行环境、Paddle 版本、环境搭建、复现脚本、测试结果和测试日志。
+此处给出了基于 Paddle 框架实现的 Mask R-CNN 任务的训练性能详细测试报告，包括执行环境、Paddle 版本、环境搭建、复现脚本、测试结果和测试日志。
 
-相同环境下，其他深度学习框架的 Bert 训练性能数据测试流程，请参考：[OtherReports](./OtherReports)。
+相同环境下，其他深度学习框架的 Mask R-CNN 训练性能数据测试流程，请参考：[OtherReports](./OtherReports)。
 
 <!-- omit in toc -->
 ## 目录
@@ -27,7 +27,7 @@
 
 我们统一使用了 **吞吐能力** 作为衡量性能的数据指标。**吞吐能力** 是业界公认的、最主流的框架性能考核指标，它直接体现了框架训练的速度。
 
-Bert Base 模型是自然语言处理领域极具代表性的模型，包括 Pre-Training 和 Fine-tune 两个子任务，此处我们选取 Pre-Training 阶段作为测试目标。在测试性能时，我们以 **sentences/sec** 作为训练期间的吞吐性能。在其它框架中，默认也均采用相同的计算方式。
+Mask R-CNN 作为图像分割领域极具代表性的模型。在测试性能时，我们以**单位时间内能够完成训练的图片数量（images/sec）**作为训练期间的吞吐性能。在其它框架中，默认也均采用相同的计算方式。
 
 测试中，我们选择如下3个维度，测试吞吐性能：
 
@@ -41,24 +41,18 @@ Bert Base 模型是自然语言处理领域极具代表性的模型，包括 Pre
    FP32 和 AMP 是业界框架均支持的两种精度训练模式，也是衡量框架性能的混合精度量化训练的重要维度。
    本次测试分别对 FP32 和 AMP 两种精度模式进行了测试。
 
-
 - **BatchSize**
 
-   经调研，大多框架的 Bert Base Pre-Training 任务在第一阶段 max_seq_len=128 的数据集训练时 ，均支持 FP32 模式下 BatchSize=32/48，AMP 模式下 BatchSize=64/96。因此我们分别测试了上述两种组合方式下的吞吐性能。
+   经调研，大多框架的 Mask R-CNN 任务均支持每卡BatchSize为2、4的训练。因此我们测试不同卡数、不同精度情况下BatchSize为2和4的训练吞吐。
 
 关于其它一些参数的说明：
 
 - **XLA**
 
-   本次测试的原则是测试 Bert Base 在 Paddle 下的最好性能表现，同时对比其与其它框架最好性能表现的优劣。
+   本次测试的原则是测试 Mask R-CNN 在 Paddle 下的最好性能表现，同时对比其与其它框架最好性能表现的优劣。
 
    因此，对于支持 XLA 的框架，我们默认打开 XLA 模式，以获得该框架最好的吞吐性能数据。
 
-- **优化器**
-
-   在 Bert Base 的 Pre-Training 任务上，各个框架使用的优化器略有不同。NGC TensorFlow、NGC PyTorch 均支持 LAMBOptimizer，PaddlePaddle 默认使用的是 AdamOptimizer。LAMBOptimizer 优化器由于支持**梯度聚合策略**，在多机参数更新时，通信开销更低，性能会比原生的 AdamOptimizer 优化器更好一些。
-
-   此处我们以各个框架默认使用的优化器为准，并测试模型的吞吐性能。Paddle 后续也会支持性能更优的 LAMBOptimizer 优化器。
 
 ## 二、环境介绍
 ### 1.物理机环境
