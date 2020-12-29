@@ -84,7 +84,7 @@ TODO Distribute
 
 ### 1.单机（单卡、8卡）测试
 
-对于1卡、8卡性能测试，本报告严格按NGC公开的测试报告进行复现。其公开的测试报告请见：[《Mask R-CNN For PyTorch》](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Segmentation/MaskRCNN)。我们参照NGC公开的train_benchmark.sh编写了测试脚本，其中有三处不同：
+对于1卡、8卡性能测试，本报告严格按NGC公开的测试报告进行复现。其公开的测试报告请见：[《Mask R-CNN For PyTorch》](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Segmentation/MaskRCNN)。我们参照NGC公开的train_benchmark.sh编写了测试脚本，其中涉及3出修改：
 1. 修改了`configs/e2e_mask_rcnn_R_50_FPN_1x.yaml`配置，将`DATASETS`的配置修改为：`TRAIN: ("coco_2014_train", "coco_2014_val")  TEST: ("coco_2014",)`。因为我们的数据集中并没有minusminival数据。
 2. 测试中我们发现，如果`SOLVER.BASE_LR`为0.04，很多场景会出现loss为NAN的情况。NGC提供的0.04应该是为8卡每卡BatchSize为4准备的。因此，我们视情况调整了`SOLVER.BASE_LR`。
 3. 测试中我们发现，有些场景运行中会core，报`OSError: image file is truncated`,我们在`/opt/conda/lib/python3.6/site-packages/torchvision/datasets/coco.py`中插入了两行代码解决该问题：
