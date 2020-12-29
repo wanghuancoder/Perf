@@ -1,0 +1,828 @@
+[1,0]<stdout>:[MaskRCNN] INFO    : Horovod successfully initialized ...
+[1,0]<stdout>:[MaskRCNN] INFO    : [train] AMP is activated - Experiment Feature
+[1,0]<stdout>:[MaskRCNN] INFO    : [train] XLA is activated - Experiment Feature
+[1,0]<stdout>:[MaskRCNN] INFO    : Create CheckpointSaverHook.
+[1,0]<stdout>:[MaskRCNN] INFO    : Using Dataset Sharding with Horovod
+[1,0]<stdout>:[MaskRCNN] INFO    : [ROI OPs] Using Batched NMS... Scope: multilevel_propose_rois/level_2/
+[1,0]<stdout>:[MaskRCNN] INFO    : [ROI OPs] Using Batched NMS... Scope: multilevel_propose_rois/level_3/
+[1,0]<stdout>:[MaskRCNN] INFO    : [ROI OPs] Using Batched NMS... Scope: multilevel_propose_rois/level_4/
+[1,0]<stdout>:[MaskRCNN] INFO    : [ROI OPs] Using Batched NMS... Scope: multilevel_propose_rois/level_5/
+[1,0]<stdout>:[MaskRCNN] INFO    : [ROI OPs] Using Batched NMS... Scope: multilevel_propose_rois/level_6/
+[1,0]<stdout>:Parsing Inputs...
+[1,0]<stdout>:[MaskRCNN] INFO    : [Training Compute Statistics] 570.6 GFLOPS/image
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `L2 loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `Mask loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `Total loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `RPN box loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `RPN score loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `RPN total loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `FastRCNN class loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `FastRCNN box loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `FastRCNN total loss`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] DEBUG   : New Metric Registered: `Learning rate`, Aggregator: StandardMeter, Scope: LoggingScope.ITER, Distributed Strategy: DistributedStrategy.NONE
+[1,0]<stdout>:[MaskRCNN] INFO    : ===================================== GIT REPOSITORY =====================================
+[1,0]<stdout>:[MaskRCNN] INFO    : BRANCH NAME: 
+[1,0]<stdout>:[MaskRCNN] INFO    : %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[1,0]<stdout>:    
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================================== MODEL STATISTICS ====================================
+[1,0]<stdout>:[MaskRCNN] INFO    : # Model Weights: 44,507,634
+[1,0]<stdout>:[MaskRCNN] INFO    : # Trainable Weights: 0
+[1,0]<stdout>:[MaskRCNN] INFO    : %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[1,0]<stdout>:    
+[1,0]<stdout>:[MaskRCNN] INFO    : =================================== TRAINABLE VARIABLES ==================================
+[1,0]<stdout>:[MaskRCNN] INFO    : %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[1,0]<stdout>:    
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : # ============================================= #
+[1,0]<stdout>:[MaskRCNN] INFO    :                  Start Training                  
+[1,0]<stdout>:[MaskRCNN] INFO    : # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% #
+[1,0]<stdout>:
+[1,0]<stdout>:[GPU 00] Restoring pretrained weights (265 Tensors) from: /model/resnet/resnet-nhwc-2018-02-07/model.ckpt-112603
+[1,0]<stdout>:[MaskRCNN] INFO    : Pretrained weights loaded with success...
+[1,0]<stdout>:    
+[1,0]<stdout>:[MaskRCNN] INFO    : Saving checkpoints for 0 into /tmp/model/model.ckpt.
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123017.1807551
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 5
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 0.1 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 4
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.28413
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 2.10604
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 2.39017
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70249
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00016
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 1.1489
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.07637
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.65344
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.72982
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 4.97138
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123030.9951217
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 10
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 3.1 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 9
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.00194
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.21742
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.21936
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70249
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00036
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 1.03123
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.10522
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.61359
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.71881
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.6719
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123032.9885364
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 15
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.5 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 14
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.15534
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.09367
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.24901
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70249
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00056
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.87887
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.08067
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.51247
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.59313
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.42351
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123035.1836343
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 20
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 19
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.36304
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.3525
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.71554
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70249
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00076
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.73834
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04455
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.38051
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.42506
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.58143
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123037.137665
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 25
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.3 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 24
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.40403
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.50901
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.91304
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70249
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00096
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.7216
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04634
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.26046
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.3068
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.64393
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123039.0605228
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 30
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.0 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 29
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.45542
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.30627
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.76169
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70248
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00116
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.72721
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.05223
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.17651
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.22873
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.42011
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123040.99296
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 35
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.0 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 34
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.4203
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.32716
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.74747
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70246
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00136
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.72628
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.07729
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.14417
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.22146
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.39768
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123042.9151766
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 40
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 39
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.51692
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.712
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.22891
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70244
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00156
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.69659
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.07548
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.15899
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.23447
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.86241
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123044.8638604
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 45
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.1 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 44
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.54316
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.65856
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.20171
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70242
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00176
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68864
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.05202
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.14234
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.19436
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.78714
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123046.9519358
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 50
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.5 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 49
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.43147
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.31752
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.74899
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.7024
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00196
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.69182
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.05685
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.13441
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.19126
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.33447
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123048.8948774
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 55
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.5 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 54
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.49138
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.62103
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.11241
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70238
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00216
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.70588
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.05758
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.21148
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.26905
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.78972
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123050.8191268
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 60
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.7 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 59
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.51773
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.3492
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.86693
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70236
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00236
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68923
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.03225
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.08374
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.11598
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.3745
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123052.7620926
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 65
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.3 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 64
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.46179
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.20573
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.66752
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70234
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00256
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.7088
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04443
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.0777
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.12213
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.20079
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123054.7833617
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 70
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.1 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 69
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.3903
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.32049
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.71078
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70231
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00276
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.71153
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.08048
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.16635
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.24683
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.37146
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123056.8075314
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 75
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 74
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.46648
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.68709
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.15357
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70229
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00296
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.7064
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.0512
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.26116
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.31236
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.87462
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123058.7203772
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 80
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.7 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 79
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.3997
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.42178
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.82149
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70226
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00316
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68557
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.05781
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.12477
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.18257
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.39188
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123060.7114544
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 85
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.6 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 84
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.44384
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.43838
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.88222
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70224
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00336
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.69248
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.06378
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.23325
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.29702
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.57396
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123062.791275
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 90
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.2 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 89
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.54873
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.52816
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.0769
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70221
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00356
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68895
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04347
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.09702
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.14049
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.60854
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123064.890587
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 95
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 94
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.5407
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.67069
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.21139
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70218
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00376
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.71641
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.037
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.08829
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.12529
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.75527
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123066.9078426
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 100
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.6 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 99
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.53211
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.43149
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.96359
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70215
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00396
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68219
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.06362
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.11387
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.17748
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.52542
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123069.0127094
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 105
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.6 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 104
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.50869
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.63911
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.1478
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70212
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00416
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68729
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04769
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.1928
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.24049
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.7777
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123071.0096953
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 110
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.8 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 109
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.43144
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.48287
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.91431
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70209
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00436
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.69283
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.05633
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.16656
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.22288
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.53211
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123072.9488015
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 115
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 10.0 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 114
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.54494
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.31478
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.85972
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70206
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00456
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.70589
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.03949
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.06141
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.1009
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.36858
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123075.025636
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 120
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 119
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.57013
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.71719
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.28732
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70203
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00476
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68987
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04333
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.09862
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.14195
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.82116
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123077.0946536
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 125
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 124
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.55672
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.20051
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.75724
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70199
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00496
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68089
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.08191
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.06844
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.15035
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.29047
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123079.1594896
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 130
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.8 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 129
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.58455
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.67033
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.25488
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70195
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00516
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.69505
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.05497
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.09882
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.15379
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.80568
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123081.1781445
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 135
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.8 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 134
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.54985
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.3367
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.88655
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70192
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00536
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.69156
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.05362
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.05643
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.11005
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.39008
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123083.2143264
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 140
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.8 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 139
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.62712
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.29987
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.92699
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70188
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00556
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.66415
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.02094
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.03617
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.05711
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.35013
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123085.2886126
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 145
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.8 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 144
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.54622
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.70155
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.24777
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70184
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00576
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.67482
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04584
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.19046
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.23631
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.86073
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123087.361333
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 150
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.8 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 149
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.58656
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.63241
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.21896
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.7018
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00596
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.6859
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04921
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.07508
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.12429
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.73095
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123089.377787
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 155
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.8 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 154
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.54097
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.45565
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.99663
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70176
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00616
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.71989
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.03713
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.04801
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.08514
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.50341
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123091.2529235
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 160
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 159
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.48711
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.40183
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.88894
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70171
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00636
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68897
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.07088
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.08151
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.15239
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.43201
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123093.2000344
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 165
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 164
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.57406
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.49578
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.06984
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70167
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00656
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.68548
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.06682
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.06652
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.13334
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.59033
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123095.2406647
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 170
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 169
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.56699
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.40253
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.96952
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70162
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00676
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.65943
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04832
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.06628
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.1146
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.44517
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123097.2618148
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 175
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 174
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.54706
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.35305
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.90011
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70158
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00696
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.61531
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04647
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.06193
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.1084
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.3254
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123099.3307447
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 180
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 179
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.50574
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.2689
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.77463
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70153
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00716
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.66057
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04978
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.07292
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.12271
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.25944
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123101.3864894
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 185
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 184
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.425
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.32598
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.75098
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70149
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00736
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.70296
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.08983
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.09194
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.18177
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.3372
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123103.4751546
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 190
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 189
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.39591
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.23253
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.62844
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70144
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00756
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.65254
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04347
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.09028
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.13375
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.11617
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123105.4571216
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 195
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 194
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.46784
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.63134
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 1.09918
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70139
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00776
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.62056
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04818
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.20032
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.2485
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.66963
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : timestamp: 1609123107.4815178
+[1,0]<stdout>:[MaskRCNN] INFO    : iteration: 200
+[1,0]<stdout>:[MaskRCNN] INFO    : throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : ================= AMP Statistics =================
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Non Skipped: 199
+[1,0]<stdout>:[MaskRCNN] INFO    : Steps - Since last loss scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : Loss Scale: 4096.0
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics =====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.51936
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.33524
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.8546
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70134
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00796
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.65223
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04603
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.11323
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.15927
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.36744
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : Saving checkpoints for 200 into /tmp/model/model.ckpt.
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
+[1,0]<stdout>:[MaskRCNN] INFO    :           Training Performance Summary           
+[1,0]<stdout>:[MaskRCNN] INFO    : # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : Average throughput: 9.9 samples/sec
+[1,0]<stdout>:[MaskRCNN] INFO    : Total processed steps: 200
+[1,0]<stdout>:[MaskRCNN] INFO    : Total processing time: 0h 04m 11s
+[1,0]<stdout>:[MaskRCNN] INFO    : ==================== Metrics ====================
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN box loss: 0.51936
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN class loss: 0.33524
+[1,0]<stdout>:[MaskRCNN] INFO    : FastRCNN total loss: 0.8546
+[1,0]<stdout>:[MaskRCNN] INFO    : L2 loss: 0.70134
+[1,0]<stdout>:[MaskRCNN] INFO    : Learning rate: 0.00796
+[1,0]<stdout>:[MaskRCNN] INFO    : Mask loss: 0.65223
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN box loss: 0.04603
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN score loss: 0.11323
+[1,0]<stdout>:[MaskRCNN] INFO    : RPN total loss: 0.15927
+[1,0]<stdout>:[MaskRCNN] INFO    : Total loss: 2.36744
+[1,0]<stdout>:
+[1,0]<stdout>:[MaskRCNN] INFO    : Job finished with status: `SUCCESS`
+--------------------------------------------------------------------------------
+horovodrun -np 1 python /workspace/mask_rcnn_main.py --mode train --model_dir "/tmp/model" --checkpoint "/model/resnet/resnet-nhwc-2018-02-07/model.ckpt-112603" --training_file_pattern "/data/train*.tfrecord" --init_learning_rate 0.04 --total_steps 200 --use_batched_nms --noeval_after_training --nouse_custom_box_proposals_op --xla --train_batch_size 4 --amp
+--------------------------------------------------------------------------------
