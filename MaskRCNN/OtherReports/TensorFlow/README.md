@@ -51,9 +51,9 @@
 
 ### 1.单机（单卡、8卡）环境搭建
 
-单机环境的搭建，我们遵循了 NGC TensorFlow 官网提供的 [Quick Start Guide](https://github.com/NVIDIA/DeepLearningExamples/tree/master/TensorFlow2/Segmentation/MaskRCNN#quick-start-guide) 教程成功搭建了测试环境，主要过程如下：
+单机环境的搭建，我们遵循了 NGC TensorFlow2 官网提供的 [Quick Start Guide](https://github.com/NVIDIA/DeepLearningExamples/tree/master/TensorFlow2/Segmentation/MaskRCNN#quick-start-guide) 教程成功搭建了测试环境，主要过程如下：
 
-- 下载NGC TensorFlow repo,并进入目录
+- 下载NGC TensorFlow2 repo,并进入目录
 
    ```bash
    git clone https://github.com/NVIDIA/DeepLearningExamples.git
@@ -123,8 +123,8 @@ TODO Distribute
 
 |卡数 | FP32(BS=2) | FP32(BS=4) | AMP(BS=2) | AMP(BS=4)|
 |:-----:|:-----:|:-----:|:-----:|:-----:|
-|1 | - | - | - | - |
-|8 | - | - | - | - |
+|1 | 5.3 | 5.8 | 8.1 | 9.9 |
+|8 | 37.8 | 39.3 | 49.6 | 54.8 |
 |32 | - | - | - | - |
 
 ## 五、日志数据
