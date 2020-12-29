@@ -51,7 +51,7 @@
 
 ### 1.单机（单卡、8卡）环境搭建
 
-单机环境的搭建，我们遵循了 NGC TensorFlow 官网提供的 [Quick Start Guide](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Segmentation/MaskRCNN#quick-start-guide) 教程成功搭建了测试环境，主要过程如下：
+单机环境的搭建，我们遵循了 NGC PyTorch 官网提供的 [Quick Start Guide](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Segmentation/MaskRCNN#quick-start-guide) 教程成功搭建了测试环境，主要过程如下：
 
 - 下载NGC PyTorch repo,并进入目录
 
@@ -84,9 +84,14 @@ TODO Distribute
 
 ### 1.单机（单卡、8卡）测试
 
-对于1卡、8卡性能测试，本报告严格按NGC公开的测试报告进行复现。其公开的测试报告请见：[《Mask R-CNN For PyTorch》](https://github.com/NVIDIA/DeepLearningExamples/tree/master/TensorFlow2/Segmentation/MaskRCNN)。我们参照NGC公开的train_benchmark.sh编写了测试脚本，其中有两处不同：
+对于1卡、8卡性能测试，本报告严格按NGC公开的测试报告进行复现。其公开的测试报告请见：[《Mask R-CNN For PyTorch》](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Segmentation/MaskRCNN)。我们参照NGC公开的train_benchmark.sh编写了测试脚本，其中有三处不同：
 1. 修改了`configs/e2e_mask_rcnn_R_50_FPN_1x.yaml`配置，将`DATASETS`的配置修改为：`TRAIN: ("coco_2014_train", "coco_2014_val")  TEST: ("coco_2014",)`。因为我们的数据集中并没有minusminival数据。
-2. 将脚本中的`SOLVER.BASE_LR 0.04`改为`SOLVER.BASE_LR 0.01`。因为，测试时我们发现，float16下，如果lr为0.04会出现loss为NAN。
+2. 测试中我们发现，如果`SOLVER.BASE_LR`为0.04，很多场景会出现loss为NAN的情况。NGC提供的0.04应该是为8卡每卡BatchSize为4准备的。因此，我们视情况调整了`SOLVER.BASE_LR`。
+3. 测试中我们发现，有些场景运行中会core，报`OSError: image file is truncated`,我们在`/opt/conda/lib/python3.6/site-packages/torchvision/datasets/coco.py`中插入了两行代码解决该问题：
+  ```
+  from PIL import ImageFile
+  ImageFile.LOAD_TRUNCATED_IMAGES = True
+  ```
 
 - 下载我们编写的测试脚本，并执行该脚本
 
